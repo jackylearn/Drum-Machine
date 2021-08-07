@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root{
+    --background-color: #fcfcfc;
+    --key-color: #999;
+    --main-color: #4c9;
+    --activated-color: #59e;
+}
+
+* {
+    background-color: var(--key-color);
+    font-family: 'Press Start 2P', cursive;
+}
+
+#drum-machine {
+    padding: 10px;
+    margin: 15vh auto 20px;
+    min-width: 450px;
+    max-width: 600px;
+    border: 12px solid var(--main-color);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-areas: 
+    "pad power"
+    "pad display"
+    "pad slider"
+    "pad bank";
+    text-align: center;
+    background-color: var(--background-color);
+}
+
+#keyboard {
+    display: grid;
+    grid-template-columns: repeat(3, calc((100% - 2*1em)/3));
+    grid-template-rows: repeat(3, calc((100% - 2*1em)/3));
+    gap: 1em;
+    margin: 15px;
+    grid-area: pad;
+    background-color: inherit;
+}
+
+.drum-pad {
+    background-color: var(--key-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8em;
+    box-shadow: 2px 2px 2px #555, 2px 2px 10px #333;
+    border-radius: 3px;
+    height: 45px;
+}
+
+.activated {
+    background-color: var(--activated-color);
+    box-shadow: none;
+
+}
+
+.switch {
+    background-color: #333;
+    height: 20px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 0.3em;
+}
+
+.switched {
+    justify-content: flex-end;
+}
+
+.switch-button {
+    background-color: #b33;
+    height: 70%;
+    width: 40%;
+    margin: 8%;
+}
+
+
+
+#display {
+    margin: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+#display > p{
+    display: flex;
+    align-items: center;
+    padding: 0.3em 1em;
+    justify-content: center;
+    background-color: var(--key-color);
+    width: 160px;
+    height: 45px;
+    font-size: 0.8rem;
+}
+
+#volume {
+    grid-area: slider;
+    background-color:transparent;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Power {
+    margin-top: 15px;
+    grid-area: power;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+}
+
+#Bank {
+    margin-bottom: 15px;
+    grid-area: bank;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+}
+#display {
+    grid-area: display;
+}
+
+#Power > span,
+#Bank > span {
+    background-color: inherit;
+}
+
+footer {
+  margin: 0 auto;
+  text-align: center;
+}
